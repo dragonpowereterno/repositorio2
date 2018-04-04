@@ -4,12 +4,20 @@
 	<title>scrit vue.js</title>
 </head>
 <body>
-<div id="muu">
-	hola {{nom}}
-
+<div id="app">
+	hola {{nombre}}
 </div>
+
 <script src="https://unpkn.com/vue"></script>
-<script type="text/javascript"></script>
+<script type="text/javascript">
+	let app= new Vue({
+		el: '#app',
+		data: {
+		nom:'helado'	
+		}
+	})
+
+</script>
 
 </body>
 </html>
