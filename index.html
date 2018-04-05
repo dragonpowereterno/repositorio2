@@ -6,10 +6,10 @@
 <body>
 <div id="hol">
 <template v-if="falso">
-<h1>caca master 2</h1>	
+<h1>{{caca2 | gaga}}</h1>	
 </template>	
 <template v-if="falso">
-<h2 >caca master</h2>
+<h2 >{{caca1 | gaga2}}</h2>
 </template>
 <div v-show="falso">
 adios	
@@ -25,11 +25,23 @@ hola :v {{muu}}
 let hol = new Vue({
 el:'#hol',
 data:{
+caca1: 'holla muDndo queF esta podrido',
+caca2: 'hoHa coKdorniz que pasLeaen pradera',
 muu: 'hetttttttttt',
 url:'https://www.youtube.com/watch?v=-6rvuDA0XP4&list=PLtfx2ncino2SUM9pKbZ6DlKSygSmna8jU&index=21'
 ,as:'caca:v',
-falso:false
+falso:true
+},filters:{
+gaga: function(str){
+return str.toUpperCase()
 }
+
+gaga2: function(str){
+return str.toLowerCase()
+}
+
+}
+
 })	
 
 </script>
