@@ -5,8 +5,8 @@
 </head>
 <body>
 <div id="hol">
-<button>sumar 1</button>
-<button>restar 1</button>
+<button v-on:click="sumar">sumar 1</button>
+<button v-on:click="restar">restar 1</button>
 el contador esta nada {{contador}}	
 <template v-if="falso">
 <h1>{{caca2 | gaga}}</h1>	
@@ -43,6 +43,16 @@ return str.toUpperCase()
 
 gaga2: function(str){
 return str.toLowerCase()
+}
+
+},
+methods: {
+sumar: function(){
+this.contador++
+},
+
+restar: function(){
+this.contador--
 }
 
 }
