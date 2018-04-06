@@ -9,7 +9,12 @@
 <div id="hol">
 <div>
 	<input type="text" name="id" placeholder="ingrese su id"  v-bind:value="nombre">
+<input type="checkbox" id="vue" value="vue">
+<label for="vue">curso de vue</label>
 <p> tu nombre en mayuscula es {{ nombre | gaga}}</p>
+<form>
+	<h1>{{p1}}</h1>
+</form>
 </div>	
 <button v-on:click="sumar">sumar 1</button>
 <button v-on:click="restar">restar 1</button>
@@ -35,7 +40,8 @@ hola :v {{muu}}
 let hol = new Vue({
 el:'#hol',
 data:{
-nombre: '',	
+p1: 'cual es tu decicion',	
+nombre: 'AsAssA',	
 caca1: 'holla muDndo queF esta podrido',
 caca2: 'hoHa coKdorniz que pasLeaen pradera',
 muu: 'hetttttttttt',
