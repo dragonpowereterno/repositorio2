@@ -8,9 +8,19 @@
 
 <div id="hol">
 <div>
+<form v-on:submit.prevent="submit2" action="" method="get">
 	<input type="text" name="id" placeholder="ingrese su id"  v-bind:value="nombre">
-<input type="checkbox" id="vue" value="vue">
+<input name="curso" type="checkbox" id="vue" value="vue">
 <label for="vue">curso de vue</label>
+<input name="curso" type="checkbox" id="moo" value="moo">
+<label for="moo">curso de magia</label>
+<input  name="curso" type="checkbox" id="doo" value="doo">
+<label for="doo">curso de antimateria :v</label>
+<input name="curso" type="checkbox" id="set" value="set">
+<label for="set">curso de la guerra</label>
+<button type="submit">enviar</button>
+
+</form>
 <p> tu nombre en mayuscula es {{ nombre | gaga}}</p>
 <form>
 	<h1>{{p1}}</h1>
@@ -48,7 +58,8 @@ muu: 'hetttttttttt',
 url:'https://www.youtube.com/watch?v=-6rvuDA0XP4&list=PLtfx2ncino2SUM9pKbZ6DlKSygSmna8jU&index=21'
 ,as:'caca:v',
 falso:true,
-contador: 0
+contador: 0,
+curso:[]
 },filters:{
 gaga: function(str){
 return str.toUpperCase()
@@ -60,6 +71,11 @@ return str.toLowerCase()
 
 },
 methods: {
+
+	submit2: function(){
+    console.log("se daño todo")
+console.log(this.curso)
+},
 sumar: function(){
 this.contador++
 },
