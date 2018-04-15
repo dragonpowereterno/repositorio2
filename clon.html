@@ -6,8 +6,13 @@
 <body>
 	<div id="a">
 		hola {{nom}} {{nam}}
-		<a v-bind:href="url">{{nom1}}</a>
+		<a v-if="trump":href="url">{{nom1}}</a>
+	<div v-show="mostrar">
+		
+		<p>holaaaaaaaaaaaaaaaaa</p>
 	</div>
+	</div>
+	
 <script src="https://unpkg.com/vue"></script>	
 <script type="text/javascript">
 	let a=new Vue({
@@ -16,7 +21,10 @@
 		nom:'caca',
 		nam:'holaaaaaaa',
 		nom1:'google',
+		 trump: false,
+		 mostrar:false,
 	    url:'https://www.google.com'
+	   
 	}	
 	})
 
