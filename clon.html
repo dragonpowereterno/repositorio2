@@ -6,6 +6,7 @@
 <body>
 	<div id="a">
 		hola {{nom}} {{nam}}
+		<a v-bind:href="url">{{nom1}}</a>
 	</div>
 <script src="https://unpkg.com/vue"></script>	
 <script type="text/javascript">
@@ -13,7 +14,9 @@
 	el:'#a',
 	data:{
 		nom:'caca',
-		nam:'holaaaaaaa'
+		nam:'holaaaaaaa',
+		nom1:'google',
+	    url:'https://www.google.com'
 	}	
 	})
 
