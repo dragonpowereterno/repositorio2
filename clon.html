@@ -5,6 +5,8 @@
 </head>
 <body>
 	<div id="a">
+		<h1>{{hola5 | hola4}}</h1>
+		<h2>{{hola6 |hola3}}</h2>
 		hola {{nom}} {{nam}}
 		<a v-if="trump":href="url">{{nom1}}</a>
 	<div v-show="mostrar">
@@ -23,8 +25,19 @@
 		nom1:'google',
 		 trump: false,
 		 mostrar:false,
+		 hola5:'muFu',
+		 hola6:'noGoooHoooJoooooooooooooo',
 	    url:'https://www.google.com'
 	   
+	},
+	filters:{
+		hola3: function(str){
+         return str.toUpperCase()
+		},
+		hola4: function(str){
+         return str.toLowerCase()
+		}
+		
 	}	
 	})
 
