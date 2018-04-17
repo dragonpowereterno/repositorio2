@@ -5,14 +5,19 @@
 </head>
 <body>
 	<div id="a">
-		<h1>{{hola5 | hola4}}</h1>
-		<h2>{{hola6 |hola3}}</h2>
-		hola {{nom}} {{nam}}
-		<a v-if="trump":href="url">{{nom1}}</a>
-	<div v-show="mostrar">
-		
-		<p>holaaaaaaaaaaaaaaaaa</p>
-	</div>
+	<input type="text" name="nombre" v-model="nombre" placeholder="ingresar un nombre">
+<p>tu nombre en mayuscula {{ nombre | restar}} gugu</p>
+<form action="" method="get">
+<input type="checkbox" name="po" id="po" value="po">
+<label for="po">aceptar</label>
+<input type="checkbox" name="po" id="po1" value="po1">
+<label for="po1">adios</label>
+<input type="submit" name="aceptar" value="aceptar">
+</form>
+
+<button v-on:click="sum">sumar 1</button>
+<button v-on:click="res">restar 1</button>
+<p>caca resta {{cons}}</p>
 	</div>
 	
 <script src="https://unpkg.com/vue"></script>	
@@ -25,21 +30,34 @@
 		nom1:'google',
 		 trump: false,
 		 mostrar:false,
+		 nombre: '',
 		 hola5:'muFu',
 		 hola6:'noGoooHoooJoooooooooooooo',
-	    url:'https://www.google.com'
-	   
+	    url:'https://www.google.com',
+	   cons:0
 	},
 	filters:{
-		hola3: function(str){
-         return str.toUpperCase()
-		},
-		hola4: function(str){
-         return str.toLowerCase()
-		}
-		
-	}	
+      sumar:function(str){
+      return str.toUpperCase()
+      },
+      restar:function(str){
+      return str.toLowerCase()
+      }
+
+	},
+	methods:{
+sum:function(){
+this.cons++	
+},
+res:function(){
+this.cons--
+}
+
+	}
+	
 	})
+
+
 
 </script>
 </body>
