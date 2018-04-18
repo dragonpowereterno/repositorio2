@@ -5,19 +5,24 @@
 </head>
 <body>
 	<div id="a">
-	<input type="text" name="nombre" v-model="nombre" placeholder="ingresar un nombre">
-<p>tu nombre en mayuscula {{ nombre | restar}} gugu</p>
+
+
+
+<h1>{{ingresar}}</h1>
 <form action="" method="get">
-<input type="checkbox" name="po" id="po" value="po">
-<label for="po">aceptar</label>
-<input type="checkbox" name="po" id="po1" value="po1">
-<label for="po1">adios</label>
-<input type="submit" name="aceptar" value="aceptar">
+
+<template v-for="curso in cursos">
+	<input v-model="curso" type="text" v-bind:id="curso.value" placeholder="ingresas nombre" >
+	<input v-model="curso" type="checkbox"  v-bind:id="curso.value" v-bind:value="curso.value">
+    <label v-bind:for="curso.value">{{curso.nombre}}</label>
+
+</template>
+
+<input type="submit"  value="aceptar">
+
 </form>
 
-<button v-on:click="sum">sumar 1</button>
-<button v-on:click="res">restar 1</button>
-<p>caca resta {{cons}}</p>
+
 	</div>
 	
 <script src="https://unpkg.com/vue"></script>	
@@ -25,35 +30,15 @@
 	let a=new Vue({
 	el:'#a',
 	data:{
-		nom:'caca',
-		nam:'holaaaaaaa',
-		nom1:'google',
-		 trump: false,
-		 mostrar:false,
-		 nombre: '',
-		 hola5:'muFu',
-		 hola6:'noGoooHoooJoooooooooooooo',
-	    url:'https://www.google.com',
-	   cons:0
-	},
-	filters:{
-      sumar:function(str){
-      return str.toUpperCase()
-      },
-      restar:function(str){
-      return str.toLowerCase()
-      }
-
-	},
-	methods:{
-sum:function(){
-this.cons++	
-},
-res:function(){
-this.cons--
-}
-
+		
+		 ingresar:'curso selecionados',
+		 cursos:[{value:'nom'},{nombre:'uno',value:'uno'},{value:'nom2'},{nombre:'dos',value:'dos'}]
+	
 	}
+
+	
+
+	
 	
 	})
 
