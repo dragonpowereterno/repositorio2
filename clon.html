@@ -9,15 +9,26 @@
 
 
 <h1>{{ingresar}}</h1>
-<form action="" method="get">
+<form action="" method="post">
 
-<template v-for="curso in cursos">
-	<input v-model="curso" type="text" v-bind:id="curso.value" placeholder="ingresas nombre" >
+<div v-show="ca">
+ <template v-for="curso2 in cursos2">
+	<input v-model="curso2" type="text" v-bind:id="curso2.value" placeholder="ingresas nombre" >	<br>
+ </template>
+
+ <template v-for="curso in cursos">
+
 	<input v-model="curso" type="checkbox"  v-bind:id="curso.value" v-bind:value="curso.value">
     <label v-bind:for="curso.value">{{curso.nombre}}</label>
 
-</template>
+ </template>
+</div>
 
+
+
+<template v-for="curso in cursos">
+	<curso v-bind:curso="curso"></curso>
+</template>
 <input type="submit"  value="aceptar">
 
 </form>
@@ -27,13 +38,24 @@
 	
 <script src="https://unpkg.com/vue"></script>	
 <script type="text/javascript">
+	Vue.component('curso',{
+props:['curso'],
+template:`
+<div>
+<input v-model="curso" type="checkbox"  v-bind:id="curso.value" v-bind:value="curso.value">
+<label v-bind:for="curso.value">{{curso.nombre}}</label>
+</div>
+
+`
+
+	})
 	let a=new Vue({
 	el:'#a',
 	data:{
-		
+		ca: false ,
 		 ingresar:'curso selecionados',
-		 cursos:[{value:'nom'},{nombre:'uno',value:'uno'},{value:'nom2'},{nombre:'dos',value:'dos'}]
-	
+		 cursos:[{nombre:'uno',value:'uno'},{nombre:'dos',value:'dos'}],
+	     cursos2:[{value:'nom'},{value:'nom2'}]
 	}
 
 	
